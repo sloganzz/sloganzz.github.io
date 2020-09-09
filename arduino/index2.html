@@ -1,0 +1,130 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title></title>
+<title>Arduino</title>
+</head>
+<body>
+<h1>DHT-22 Sensor</h1>
+<table border="1" cellspacing="10px" cellpadding="0">
+	    <tr><td height="200px" width="250px"><img src="img4.jpg"></td><td height="200px" width="250px"><img src="img6.jpg"> </td></tr>
+		<tr>
+		<td colspan="3" height="200px">
+		The DHT22 is the more expensive version which obviously has better specifications. Its temperature</br>
+		measuring range is from -40 to +125 degrees Celsius with +-0.5 degrees accuracy, while the DHT11</br>
+		temperature range is from 0 to 50 degrees Celsius with +-2 degrees accuracy. Also the DHT22 sensor</br>
+		has better humidity measuring range, from 0 to 100% with 2-5% accuracy, while the DHT11 humidity </br>
+		range is from 20 to 80% with 5% accuracy.
+		</td>
+		</tr>
+		<tr>
+		<td colspan="3" height="200px">
+		#include <dht.h></br>
+#define dataPin 8 // Defines pin number to which the sensor is connected</br>
+dht DHT; // Creats a DHT object</br>
+void setup() {</br>
+  Serial.begin(9600);</br>
+}</br>
+void loop() {</br>
+  int readData = DHT.read22(dataPin); // Reads the data from the sensor</br>
+  float t = DHT.temperature; // Gets the values of the temperature</br>
+  float h = DHT.humidity; // Gets the values of the humidity</br>
+  </br>
+  // Printing the results on the serial monitor</br>
+  Serial.print("Temperature = ");</br>
+  Serial.print(t);</br>
+  Serial.print(" *C ");</br>
+  Serial.print("    Humidity = ");</br>
+  Serial.print(h);</br>
+  Serial.println(" % ");</br>
+  </br>
+  delay(2000); // Delays 2 secods, as the DHT22 sampling rate is 0.5Hz</br> 
+}
+		</td>
+		</tr> 
+		<tr><td colspan="3" width="500px" height="100px">https://howtomechatronics.com/tutorials/arduino/dht11-dht22-sensors-temperature-and-humidity-tutorial-using-arduino/</td></tr>	
+</table>
+<h2>KY-008 LASER TRANSMITTER MODULE</h2>
+<table border="1" cellspacing="10px" cellpadding="0">
+	    <tr><td height="200px"> <img src="laser.jpg"> </td><td><img src="shema.jpg"></td></tr>
+		<tr><td colspan="3" height="150px">
+		This Keyes device is one of the more common devices found in Arduino sensor kits.</br>
+Coupled with other components, it can be used to create trip wires or optical effects.</br>
+The KY-008 is particularly neat because it can be directly powered from an Arduino</br>
+ output pin as it only draws 30 mA from the processor that has outputs rated for 40 mA.
+		</td>
+		</tr>
+		<tr><td colspan="3" height="200px">
+		int laserPin = 10;</br>
+void setup ()</br>
+{</br>
+pinMode (laserPin, OUTPUT); // define the digital output interface 13 feet</br>
+}</br>
+void loop () {</br>
+laserEmiter(laserPin,15,5);</br>
+}</br>
+void laserEmiter(int laserPin,int timeToBurn,int timeToRest){//made by Ilja Kazantsev</br>
+digitalWrite (laserPin, HIGH); // Turn Laser On</br>
+delay (timeToBurn);// delay while it burns</br>
+digitalWrite (laserPin, LOW); // Turn Laser Off</br>
+delay (timeToRest);//delay till new cicle</br>
+}</br>
+</br>
+void setup ()</br>
+{</br>
+pinMode (laserPin, OUTPUT); // define the digital output interface 13 feet</br>
+}</br>
+void loop () {</br>
+laserEmiter(laserPin,15,5);</br>
+}</br>
+void laserEmiter(int laserPin,int timeToBurn,int timeToRest){//made by Ilja Kazantsev</br>
+digitalWrite (laserPin, HIGH); // Turn Laser On</br>
+delay (timeToBurn);// delay while it burns</br>
+digitalWrite (laserPin, LOW); // Turn Laser Off</br>
+delay (timeToRest);//delay till new cicle</br>
+}
+		</td>
+		</tr> 
+		<tr><td colspan="3" width="650px" height="150px">http://scrumpoker.eu/%d1%81%d0%bf%d0%b5%d1%86%d0%b8%d0%b0%d0%bb%d1%8c%d0%bd%d1%8b%d0%b5-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d1%8b/arduino/%d0%b1%d0%b8%d0%b1%d0%bb%d0%b8%d0%be%d1%82%d0%b5%d0%ba%d0%b0-%d0%bc%d0%be%d0%b4%d1%83%d0%bb%d0%b5%d0%b9-arduino/%d0%bb%d0%b0%d0%b7%d0%b5%d1%80%d0%bd%d1%8b%d0%b9-%d0%b8%d0%b7%d0%bb%d1%83%d1%87%d0%b0%d1%82%d0%b5%d0%bb%d1%8c-laser-emiter/</td></tr>	
+
+</table>
+<h2>KY-029 3mm Two Color Red and Green LED</h2>
+<table border="1" cellspacing="10px" cellpadding="0">
+	    <tr><td height="200px"><img src="led.jpg"> </td><td><img src="shema1.jpg"> </td></tr>
+		<tr><td colspan="3" height="200px">
+		LED module which includes a red and a green LED. They are connected via cathode. You need resistors for different voltages.
+		</td>
+		</tr>
+		<tr><td colspan="3" height="200px">
+ int Led_Red = 10;</br>
+int Led_Green = 11;</br>
+ </br>
+void setup ()</br>
+{</br>
+  // Initialization of the Output pins for the LEDs</br>
+  pinMode (Led_Red, OUTPUT); </br>
+  pinMode (Led_Green, OUTPUT); </br>
+}</br>
+ 
+void loop () // main program loop</br>
+{</br>
+  digitalWrite (Led_Red, HIGH); // LED will switch to ON</br>
+  digitalWrite (Led_Green, LOW); // LED will switch to OFF</br>
+  delay (3000); // Wait mode for 3 seconds</br>
+ </br>
+  digitalWrite (Led_Red, LOW); // LED will switch to OFF</br>
+  digitalWrite (Led_Green, HIGH); // LED will switch to ON</br>
+  delay (3000); // Wait mode for another 3 seconds in which the LEDs will be switched</br>
+}</br>
+}
+		</td>
+		</tr> 
+		<tr><td colspan="3" width="650px" height="200px">
+		https://sensorkit.en.joy-it.net/index.php?title=KY-029_2-Color_(Red%2BGreen)_3mm_LED_module</br>
+		
+		</td><
+		/tr>	
+</table>
+
+</body>
+</html>
