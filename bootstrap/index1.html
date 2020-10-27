@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Arduino</title>
+<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+<div class="container">
+<!--// nachalo vsego caita d-lg-none//-->
+<div class="row">
+<div class="col">
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="pictures/slider4.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="pictures/slider3.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="pictures/slider2.png" class="d-block w-100" alt="...">
+    </div>
+<div class="carousel-item">
+      <img src="pictures/slider1.png" class="d-block w-100" alt="...">
+    </div>
+  </div>
+</div>
+</div>
+
+</div>
+<div class="row">
+<div class="col">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;">
+  <a class="navbar-brand" href="arduino.html">
+   <img src="pictures/arduinonavbar.svg" width="50" height="50" alt="">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="arduino.html">Главная</a>
+      </li>
+		<li class="nav-item active">
+        <a class="nav-link" href="modules.html">Модули</a>
+      </li>
+	  <li class="nav-item active">
+        <a class="nav-link" href="index1.html">DHT11</a>
+      </li>
+    </ul>   
+  </div> 
+</nav>
+</div>
+</div>
+<div class="row">
+	<div class="col 12">
+	<h3>Датчик температуры и влажности DHT11</h3>
+	<div class="col-12 col-md-6 col-lg-3 col-sm-12">
+        <img src="pictures/index1.jpg" width="500 px">
+     </div>	
+	<h3>Краткое описание</h3>
+	<p>
+	DHT11 — это цифровой датчик, состоящий из термистора и емкостного датчика влажности.
+	Наряду с невысокой стоимостью DHT11 имеет следующие характеристики: питание осуществляется
+	от 3,5-5V, определение температуры от 0 до 50 градусов с точностью 2 град, определение влажности
+	от 20% до 95% с 5% точностью
+	</p>
+	<h3>Схема подключения к Arduino</h3>
+	<div class="col-12 col-md-6 col-lg-3 col-sm-12">
+        <img src="pictures/index12.png" width="500 px">
+     </div>
+	<h3>Код поключения к Arduino</h3>
+	<p>
+	#include</br>
+    #define dataPin 8</br>
+    dht DHT;</br>
+    void setup() {</br>
+	Serial.begin(9600);</br>
+	}</br>
+	void loop() {</br>
+	int readData = DHT.read22(dataPin);</br>
+	float t = DHT.temperature;</br>
+	float h = DHT.humidity;</br>
+	</br>
+	Serial.print("Temperature = ");</br>
+	Serial.print(t);</br>
+	Serial.print(" *C ");</br>
+	Serial.print(" Humidity = ");</br>
+	Serial.print(h);</br>
+	Serial.println(" % ");</br>
+	</br>
+	delay(2000);</br>
+	}
+	</br>
+	</br>
+	</br>
+	</br>	
+	</br>	
+	</p>
+	</div>
+</div> 
+
+<div class="row">
+<div class="col-12 col-xl-3 col-lg-4 col-md-6"><p class="bg-success text light"></p></div>
+<div class="col-12 col-xl-3 col-lg-4 col-md-6"><p class="bg-primary text light"></p></div>
+<div class="col-12 col-xl-3 col-lg-4 col-md-6"><p class="bg-warning text light"></p></div>
+<div class="col-12 col-xl-3 col-lg-4 col-md-6"><p class="bg-danger text light"></p></div>
+</div>
