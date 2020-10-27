@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Arduino</title>
+<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+<div class="container">
+<!--// nachalo vsego caita d-lg-none//-->
+<div class="row">
+<div class="col">
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="pictures/slider4.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="pictures/slider3.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="pictures/slider2.png" class="d-block w-100" alt="...">
+    </div>
+<div class="carousel-item">
+      <img src="pictures/slider1.png" class="d-block w-100" alt="...">
+    </div>
+  </div>
+</div>
+</div>
+
+</div>
+<div class="row">
+<div class="col">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;">
+  <a class="navbar-brand" href="arduino.html">
+   <img src="pictures/arduinonavbar.svg" width="50" height="50" alt="">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="arduino.html">Главная</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="modules.html">Модули</a>
+      </li>
+	  <li class="nav-item active">
+        <a class="nav-link" href="index2.html">801S</a>
+      </li>
+    </ul>   
+  </div>
+</nav>
+</div>
+</div>
+<div class="row">
+	<div class="col 12">
+	<h3>Датчик вибрации 801S</h3>
+	<div class="col-12 col-md-6 col-lg-3 col-sm-12">
+        <img src="pictures/index2.jpg" width="500 px">
+     </div>	
+	<h3>Краткое описание</h3>
+	<p>
+	становка датчиков вибрации актуальна для проектов в сфере безопасности и автоматизации.
+	Модель 801S отличается высокой чувствительностью и способна реагировать на вибрации с 
+	любых направлений в широком диапазоне. Отличительной особенностью сенсора является 
+	возможность точной настройки чувствительности сенсора. На выходе датчик измерения
+	вибрации выдает аналоговый и цифровой TTL сигнал, подключается к любому выводу Ардуино.
+	Показания сенсоры актуальны независимо от расположения датчика на рабочей платформе.
+	Датчик вибрации Ардуино предназначен для реализации самостоятельных проектов на базе
+	микросхем этого популярного производителя. Простое подключение для взаимодействия по
+	аналоговому каналу является одним из преимуществ сенсора. В корпусе датчика предусмотрено
+	отверстие для монтажа, через которое можно надежно зафиксировать сенсор на любой платформе.
+	Основные сферы применения датчика – охранные системы, сигнализации, детекторы движения,
+	электронные замки, системы умного дома и домашние сейсмостанции, противоугонные устройства.
+	</p>
+	<h3>Схема подключения к Arduino</h3>
+	<div class="col-12 col-md-6 col-lg-3 col-sm-12">
+        <img src="pictures/index22.jpg" width="500 px">
+     </div>
+	<h3>Код поключения к Arduino</h3>
+	<p>
+	int vib_pin=7;</br>
+	int led_pin=13;</br>
+	void setup() {</br>
+	pinMode(vib_pin,INPUT);</br>
+	pinMode(led_pin,OUTPUT);</br>
+	}</br>
+	</br>
+	void loop() {</br>
+	int val;</br>
+	val=digitalRead(vib_pin);</br>
+	if(val==1)</br>
+	{</br>
+    digitalWrite(led_pin,HIGH);</br>
+    delay(1000);</br>
+    digitalWrite(led_pin,LOW);</br>
+    delay(1000);</br>
+	}</br>
+	else</br>
+	digitalWrite(led_pin,LOW);</br>
+	}</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</p>
+	</div>
+<div class="row">
+<div class="col-12 col-xl-3 col-lg-4 col-md-6"><p class="bg-success text light"></p></div>
+<div class="col-12 col-xl-3 col-lg-4 col-md-6"><p class="bg-primary text light"></p></div>
+<div class="col-12 col-xl-3 col-lg-4 col-md-6"><p class="bg-warning text light"></p></div>
+<div class="col-12 col-xl-3 col-lg-4 col-md-6"><p class="bg-danger text light"></p></div>
+</div>
