@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Modules</title>
+<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+<div class="container">
+<!--// nachalo vsego caita d-lg-none//-->
+<div class="row">
+<div class="col-12">
+<script language="javascript" src="js/jquery-3.5.1.slim.min.js" ></script>
+<script language="javascript" src="js/popper.min.js" ></script>
+<script language="javascript" src="js/bootstrap.min.js" ></script>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color:RoyalBlue;">
+  <img src="pictures/arduinonavbar.svg" width="50" height="50" alt="">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html"><span class="sr-only" style="font-color:White;">(current)</span></a>
+		</li>
+	  <li class="nav-item active">
+        <a class="nav-link" href="arduino2.html">Главная</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+</div>
+</div>
+<div class="row">
+	<div class="col 12">
+	<h3>Датчик вибрации 801S</h3>
+	<div class="col-12 col-md-6 col-lg-3 col-sm-12">
+        <img src="pictures/index2.jpg" width="500 px">
+     </div>	
+	<h3>Краткое описание</h3>
+	<p>
+	становка датчиков вибрации актуальна для проектов в сфере безопасности и автоматизации.
+	Модель 801S отличается высокой чувствительностью и способна реагировать на вибрации с 
+	любых направлений в широком диапазоне. Отличительной особенностью сенсора является 
+	возможность точной настройки чувствительности сенсора. На выходе датчик измерения
+	вибрации выдает аналоговый и цифровой TTL сигнал, подключается к любому выводу Ардуино.
+	Показания сенсоры актуальны независимо от расположения датчика на рабочей платформе.
+	Датчик вибрации Ардуино предназначен для реализации самостоятельных проектов на базе
+	микросхем этого популярного производителя. Простое подключение для взаимодействия по
+	аналоговому каналу является одним из преимуществ сенсора. В корпусе датчика предусмотрено
+	отверстие для монтажа, через которое можно надежно зафиксировать сенсор на любой платформе.
+	Основные сферы применения датчика – охранные системы, сигнализации, детекторы движения,
+	электронные замки, системы умного дома и домашние сейсмостанции, противоугонные устройства.
+	</p>
+	<h3>Схема подключения к Arduino</h3>
+	<div class="col-12 col-md-6 col-lg-3 col-sm-12">
+        <img src="pictures/index22.jpg" width="500 px">
+     </div>
+	<h3>Код поключения к Arduino</h3>
+	<p>
+	int vib_pin=7;</br>
+	int led_pin=13;</br>
+	void setup() {</br>
+	pinMode(vib_pin,INPUT);</br>
+	pinMode(led_pin,OUTPUT);</br>
+	}</br>
+	</br>
+	void loop() {</br>
+	int val;</br>
+	val=digitalRead(vib_pin);</br>
+	if(val==1)</br>
+	{</br>
+    digitalWrite(led_pin,HIGH);</br>
+    delay(1000);</br>
+    digitalWrite(led_pin,LOW);</br>
+    delay(1000);</br>
+	}</br>
+	else</br>
+	digitalWrite(led_pin,LOW);</br>
+	}</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</p>
+	</div>
+
+</div>
+<!--// konets bsego saita //-->
+</div>
+<script language="javascript" src="js/jquery-3.5.1.slim.min.js" ></script>
+<script language="javascript" src="js/popper.min.js" ></script>
+<script language="javascript" src="js/bootstrap.min.js" ></script>
+</body>
+</html>
