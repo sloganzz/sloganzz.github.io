@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Modules</title>
+<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+<div class="container">
+<!--// nachalo vsego caita d-lg-none//-->
+<div class="row">
+<div class="col-12">
+<script language="javascript" src="js/jquery-3.5.1.slim.min.js" ></script>
+<script language="javascript" src="js/popper.min.js" ></script>
+<script language="javascript" src="js/bootstrap.min.js" ></script>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color:RoyalBlue;">
+  <img src="pictures/arduinonavbar.svg" width="50" height="50" alt="">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html"><span class="sr-only" style="font-color:White;">(current)</span></a>
+	  </li>
+	  <li class="nav-item active">
+        <a class="nav-link" href="arduino2.html">Главная</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+</div>
+</div>
+<div class="row">
+	<div class="col 12">
+	<h3>Датчик температуры и влажности </h3>
+	<div class="col-12 col-md-6 col-lg-3 col-sm-12">
+        <img src="pictures/index3.jpg" width="500 px">
+     </div>	
+	<h3>Краткое описание</h3>
+	<p>
+	Модуль KY-008 представляет собой плату простой конструкции с установленным на ней небольшим лазерным диодом в коллиматоре с
+	фиксированным фокусным расстоянием и минимальным набором компонентов для управления током диода.
+	Модуль позволяет реализовывать управление лазером с помощью микроконтроллера, так как токоограничительный
+	резистор на входе модуля не позволит диоду набрать ток, больший, чем может отдать Arduino.
+	</p>
+	<h3>Схема подключения к Arduino</h3>
+	<div class="col-12 col-md-6 col-lg-3 col-sm-12">
+        <img src="pictures/index32.jpg" width="500 px">
+     </div>
+	<h3>Код поключения к Arduino</h3>
+	<p>
+	int laserPin = 10;</br>
+    void setup ()</br>
+	{</br>
+	pinMode (laserPin, OUTPUT); // define the digital output interface 13 feet</br>
+	}</br>
+	void loop () {</br>
+	laserEmiter(laserPin,15,5);</br>
+	}</br>
+	void laserEmiter(int laserPin,int timeToBurn,int timeToRest){</br>
+	digitalWrite (laserPin, HIGH);</br>
+	delay (timeToBurn);</br>
+	digitalWrite (laserPin, LOW);</br>
+	delay (timeToRest);</br>
+	}</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</p>
+	</div>
+
+</div>
+<!--// konets bsego saita //-->
+</div>
+<script language="javascript" src="js/jquery-3.5.1.slim.min.js" ></script>
+<script language="javascript" src="js/popper.min.js" ></script>
+<script language="javascript" src="js/bootstrap.min.js" ></script>
+</body>
+</html>
