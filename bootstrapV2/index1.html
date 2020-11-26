@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Modules</title>
+<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+<div class="container">
+<!--// nachalo vsego caita d-lg-none//-->
+<div class="row">
+<div class="col-12">
+<script language="javascript" src="js/jquery-3.5.1.slim.min.js" ></script>
+<script language="javascript" src="js/popper.min.js" ></script>
+<script language="javascript" src="js/bootstrap.min.js" ></script>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color:RoyalBlue;">
+  <img src="pictures/arduinonavbar.svg" width="50" height="50" alt="">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html"><span class="sr-only" style="font-color:White;">(current)</span></a>
+		</li>
+	  <li class="nav-item active">
+        <a class="nav-link" href="arduino2.html">Главная</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+</div>
+</div>
+<div class="row">
+	<div class="col 12">
+	<h3>Датчик температуры и влажности DHT11</h3>
+	<div class="col-12 col-md-6 col-lg-3 col-sm-12">
+        <img src="pictures/index1.jpg" width="500 px">
+     </div>	
+	<h3>Краткое описание</h3>
+	<p>
+	DHT11 — это цифровой датчик, состоящий из термистора и емкостного датчика влажности.
+	Наряду с невысокой стоимостью DHT11 имеет следующие характеристики: питание осуществляется
+	от 3,5-5V, определение температуры от 0 до 50 градусов с точностью 2 град, определение влажности
+	от 20% до 95% с 5% точностью
+	</p>
+	<h3>Схема подключения к Arduino</h3>
+	<div class="col-12 col-md-6 col-lg-3 col-sm-12">
+        <img src="pictures/index12.png" width="500 px">
+     </div>
+	<h3>Код поключения к Arduino</h3>
+	<p>
+	#include</br>
+    #define dataPin 8</br>
+    dht DHT;</br>
+    void setup() {</br>
+	Serial.begin(9600);</br>
+	}</br>
+	void loop() {</br>
+	int readData = DHT.read22(dataPin);</br>
+	float t = DHT.temperature;</br>
+	float h = DHT.humidity;</br>
+	</br>
+	Serial.print("Temperature = ");</br>
+	Serial.print(t);</br>
+	Serial.print(" *C ");</br>
+	Serial.print(" Humidity = ");</br>
+	Serial.print(h);</br>
+	Serial.println(" % ");</br>
+	</br>
+	delay(2000);</br>
+	}
+	</br>
+	</br>
+	</br>
+	</br>	
+	</br>	
+	</p>
+	</div>
+</div> 
+
+</div>
+<!--// konets bsego saita //-->
+</div>
+<script language="javascript" src="js/jquery-3.5.1.slim.min.js" ></script>
+<script language="javascript" src="js/popper.min.js" ></script>
+<script language="javascript" src="js/bootstrap.min.js" ></script>
+</body>
+</html>
